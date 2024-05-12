@@ -24,7 +24,7 @@ int main() {
       case 2:
         printf("insert a index to delete");
         if (scanf("%d", &index) == 1) {
-          rmv(head, index);
+          rmv(&head, index);
         } else {
           printf("insert a number");
         }

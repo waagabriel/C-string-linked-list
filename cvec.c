@@ -32,14 +32,14 @@ void printVetor(string_vetor *head) {
   printf("\n");
 }
 
-int rmv(string_vetor *head, int index) {
-  string_vetor *atual = head;
-  string_vetor *anterior = head;
+int rmv(string_vetor **head, int index) {
+  string_vetor *atual = *head;
+  string_vetor *anterior = *head;
   int cursor = 0;
   while (atual != NULL) {
     if (cursor == index) {
-      if (atual == head) {
-        head = atual->next;
+      if (atual == *head) {
+        *head = atual->next;
         free(atual->string_valor);
         free(atual);
       } else {
