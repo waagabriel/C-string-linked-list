@@ -2,6 +2,8 @@
 
 simple linked list using C language
 
+you will also need to include the cvec.c file when compiling
+
  functions:
 
  * string_vetor* add(string_vetor** lista, char* value) [adds a string to the list returns NULL if error]
