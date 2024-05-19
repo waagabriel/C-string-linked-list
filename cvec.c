@@ -7,7 +7,7 @@
 #include <string.h>
 #include <unistd.h>
 // no memory leaks?
-string_vetor *add(string_vetor **lista, char *value) {
+string_vetor *string_list_add(string_vetor **lista, char *value) {
   string_vetor *novo = (string_vetor *)malloc(sizeof(string_vetor));
   if (novo == NULL)
     return NULL;
@@ -23,7 +23,7 @@ string_vetor *add(string_vetor **lista, char *value) {
   return novo;
 }
 
-void printVetor(string_vetor *head) {
+void string_list_printVetor(string_vetor *head) {
   string_vetor *cursor = head;
   while (cursor != NULL) {
     printf("\033[94m->%s", cursor->string_valor);
@@ -32,7 +32,7 @@ void printVetor(string_vetor *head) {
   printf("\n");
 }
 
-int rmv(string_vetor **head, int index) {
+int string_list_remove(string_vetor **head, int index) {
   string_vetor *atual = *head;
   string_vetor *anterior = *head;
   int cursor = 0;
@@ -55,7 +55,7 @@ int rmv(string_vetor **head, int index) {
   }
   return 1;
 }
-void freeVet(string_vetor *head) {
+void string_list_free(string_vetor *head) {
   string_vetor *tmp;
 
   while (head != NULL) {
@@ -66,7 +66,7 @@ void freeVet(string_vetor *head) {
   }
 }
 
-int printAt(string_vetor *head, unsigned int index) {
+int string_list_printAt(string_vetor *head, unsigned int index) {
   unsigned int cursor = 0;
   while (head != NULL) {
     if (index == cursor) {

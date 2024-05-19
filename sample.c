@@ -19,12 +19,12 @@ int main() {
       case 1:
         printf("insert a string to add [max 64]:\n \033[93m");
         fgets(str, 64, stdin);
-        add(&head, str);
+        string_list_add(&head, str);
         break;
       case 2:
         printf("insert a index to delete");
         if (scanf("%d", &index) == 1) {
-          rmv(&head, index);
+          string_list_remove(&head, index);
         } else {
           printf("insert a number");
         }
@@ -32,13 +32,13 @@ int main() {
       case 3:
         printf("insert the index you would like to print: ");
         if (scanf("%d", &index) == 1) {
-          printAt(head, index);
+          string_list_printAt(head, index);
         } else {
           printf("insert a number");
         }
         break;
       case 4:
-        printVetor(head);
+        string_list_print(head);
         break;
       }
     } else {
@@ -46,5 +46,5 @@ int main() {
       printf("ERROR.\n\n");
     }
   }
-  freeVet(head);
+  string_list_free(head);
 }
