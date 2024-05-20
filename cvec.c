@@ -23,7 +23,7 @@ string_vetor *string_list_add(string_vetor **lista, char *value) {
   return novo;
 }
 
-void string_list_printVetor(string_vetor *head) {
+void string_list_print(string_vetor *head) {
   string_vetor *cursor = head;
   while (cursor != NULL) {
     printf("\033[94m->%s", cursor->string_valor);
